@@ -30,3 +30,32 @@ const myFunction = function(){
 //whereas, in typescript, the datatype needs to be defined at the time of variable declaration.
 
 //to know datatype of any variable, use 'typeof'
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Memory:
+// Stack (Primitive)(copy of variable is obtained), Heap (Non-Primitive) (reference of variable is obtained)
+
+//stack example
+let myYoutubename = "SaanviJain"
+let anothername = myYoutubename
+anothername = "chaiaurcode"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+//Heap example
+let userOne = {
+    email: "user@google.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userOne 
+//reference from userOne
+
+userTwo.email = "saanvi@google.com" 
+//original value gets changed in heap
+
+console.log(userOne.email);
+console.log(userTwo.email);

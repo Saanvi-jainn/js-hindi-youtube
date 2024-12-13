@@ -23,9 +23,9 @@
  if(false) {
     console.log("not executed");
  }
- else (
+ else {
     console.log("executed");
- )
+ }
 
  // if- else if- else: used for checking multiple conditions
 

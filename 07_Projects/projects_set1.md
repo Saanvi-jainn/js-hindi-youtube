@@ -8,9 +8,7 @@
 ## Project 1 : Colour Scheme Changer
 
 ```javascipt
-const buttons = document.querySelectorAll('.button'); 
-// returns nodelist
-
+const buttons = document.querySelectorAll('.button'); //nodelist
 const body = document.querySelector('body');
 
 buttons.forEach(function (button) {

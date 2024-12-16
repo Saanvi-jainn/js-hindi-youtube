@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascipt</li>
+    </ul>
+</body>
+<script>
+    // ADD element
+
+    //less optimized at the entire tree needs to be traversed when using innerHTML
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+
+        document.querySelector('.language').appendChild(li)
+        //attach to parent class
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+    
+    //more optimized as the entire tree need not be traversed when using appendChild
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+
+    // EDIT element
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"  (not optimized approach)
+    const newLi = document.createElement('li')
+    // newLi.textContent = "Mojo"      (one more method to add text)
+    newLi.appendChild(document.createTextNode("Mojo"))
+
+    //to attach this new element with the element to be edited
+    secondLang.replaceWith(newLi) //2nd child (python) is replaced by Mojo
+
+    //another method to edit element
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescipt</li>'
+
+
+    // REMOVE an element
+
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+</script>
+</html>

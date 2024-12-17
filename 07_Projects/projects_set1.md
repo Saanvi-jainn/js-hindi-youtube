@@ -7,7 +7,7 @@
 
 ## Project 1 : Colour Scheme Changer
 
-```javascipt
+```javascript
 const buttons = document.querySelectorAll('.button'); //nodelist
 const body = document.querySelector('body');
 
